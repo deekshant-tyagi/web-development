@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.sideBar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #11101D;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sideBar.open{
+    width: 250px;
+}
+
+.sideBar  .logoDetails{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    position: relative;
+}
+
+.sideBar .logoDetails .icon{
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.sideBar .logoDetails .logoName{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.sideBar.open .logoDetails .icon ,
+.sideBar.open .logoDetails .logoName{
+    opacity: 1;
+}
+
+
+.sideBar .logoDetails #btn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.5s ease;
+    color: white;
+    transform: translateY(-50%);
+}
+.sideBar.open .logoDetails #btn{
+    text-align: right;
+}
+.sideBar i{
+    color: white;
+    min-width: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+.sideBar .navList{
+    height: 100vh;
+    margin-top: 20px;
+}
+.sideBar li{
+    margin: 8px 0;
+    position: relative;
+    list-style: none;
+}
+
+.sideBar li .toolTip{
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    left: calc(100% + 15px);
+    white-space: nowrap;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0s;
+    pointer-events: none;
+}
+.sideBar li:hover .toolTip{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sideBar.open li .toolTip{
+    display: none;
+}
+.sideBar input{
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    height: 50px;
+    width: 50px;
+    transition: all 0.5s ease;
+    background-color: #1d1b31;
+}
+.sideBar.open input{
+    width: 100%;
+    padding: 0 20px 0 50px;
+}
+.sideBar .bx-search{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1d1b31;
+    font-size: 24px;
+    color: white;
+}
+.sideBar .bx-search:hover{
+    background-color: white;
+    color: black;
+}
+.sideBar.open .bx-search:hover{
+    background-color: #1d1b31;
+    color: white;
+}
+
+.sideBar li a{
+    display: flex;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    align-items: center;
+    transition: all 0.4s ease;
+    background: #11101D;
+}
+.sideBar li  a:hover{
+    background-color: white;
+}
+.sideBar li a .linksName{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+.sideBar.open li a .linksName{
+    opacity: 1;
+    pointer-events: auto;
+}
+.sideBar li a:hover .linksName,
+.sideBar li a:hover i{
+    color: #11101D;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sideBar li i{
+    line-height: 50px;
+    font-size: 24px;
+    border-radius: 12px;
+}
+
+
+.sideBar li .profile{
+    position: fixed;
+    height: 60px;
+    width: 70px;
+    left: 0;
+    bottom: -8px;
+    padding: 10px 14px;
+    background-color: #1d1b31;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.sideBar.open li .profile{
+    width: 250px;
+}
+.sideBar li img{
+    object-fit: cover;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sideBar li .profileDetails{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.sideBar.open li .profileDetails{
+    opacity: 1;
+}
+.name , .job{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.job{
+    font-size: 12px;
+}
+#logOut{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #1d1b31;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    transition: all 0.4s ease;
+}
+
+.sideBar.open #logOut{
+    width: 50px;
+    background:none;
+}
+

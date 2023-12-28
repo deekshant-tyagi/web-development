@@ -1,0 +1,67 @@
+<!-- Events in js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML | Events</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="swift" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyfGVufDB8fDB8fHww" alt="photoshop"></li>
+            <li><img width="200px" id="verna" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww" alt=""></li>
+            <li><img width="200px" id="fortuner" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyfGVufDB8fDB8fHww" alt=""></li>
+            <li><img width="200px" id="baleno" src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHx8MA%3D%3D" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<!-- Eventssss in JS -->
+<script>
+
+    // document.getElementById('swift').onclick = function() {
+    //     alert("Swift Clicked")
+    // } less featurable so avoid it.
+
+        // Add event listener
+//    syntax ---> //document.getElementById('swift').addEventListener( 'click', function(){},false//thirt parameter by default it is set to false )
+
+    document.getElementById('swift').addEventListener( 'click', function(){
+        // alert("Swift huihui")
+    })
+    
+    // some important addEventListener
+    // type, timestamp, defaultPrevented 
+    // target, toElement, srcElement, currentTarget
+    // clientx , clientY, screenX, screenY
+    // altkey , ctrlkey, shiftkey, keycode
+
+    // Event Propagation
+    // 1- true -> Event Capturing [it renders top to bottom ]
+    // 2- False(default) -> Event bubbling[it renders bottom to top like a bubble]
+    // eg-: 
+    document.getElementById('images').addEventListener('click',function(e){
+        // console.log("clicked inside the ul");
+    },false)
+    document.getElementById('swift').addEventListener('click',function(e){
+        // console.log("Swift clicked");
+        // e.stopPropagation //stop the propagation like break st.
+    },false)
+//    if we put true the opposite [top to bottom]
+
+
+// remove
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            // e.target.remove()
+        }
+    })
+    // removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>

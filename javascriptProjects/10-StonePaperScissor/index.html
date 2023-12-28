@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone-Paper-Scissor</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <div class="wrapper relative">
+        <h1 class="text-[2rem] font-bold text-white bg-[#081b31] h-[4rem] text-center leading-[4rem]">Stone-Paper-Scissor</h1>
+        <div class="choices flex justify-center items-center mt-12 gap-6 ">
+            <div class="choice hover:cursor-pointer hover:bg-[#081b31] duration-200 ease-in-out  flex justify-center items-center h-[160px] w-[160px] rounded-[50%]" id="rock"><img class="h-[150px] w-[150px] object-cover rounded-[50%]" src="./images/rock.png" alt=""></div>
+            <div class="choice hover:cursor-pointer hover:bg-[#081b31] duration-200 ease-in-out  flex justify-center items-center h-[160px] w-[160px] rounded-[50%]" id="paper"><img class="h-[150px] w-[150px] object-cover rounded-[50%]" src="./images/paper.png" alt=""></div>
+            <div class="choice hover:cursor-pointer hover:bg-[#081b31] duration-200 ease-in-out  flex justify-center items-center h-[160px] w-[160px] rounded-[50%]" id="scissors"><img class="h-[150px] w-[150px] object-cover rounded-[50%]" src="./images/scissors.png" alt=""></div>
+        </div>
+        <div class="scoreBoard flex flex-row gap-8 text-center text-2xl font-bold font-mono justify-center items-center mt-12">
+            <div class="score">
+                <p class="text-[2rem]" id="userScore">0</p>
+                <p class="text-[2rem]">You</p>
+            </div>
+            <div class="score">
+                <p class="text-[2rem]" id="compScore">0</p>
+                <p class="text-[2rem]">Comp</p>
+            </div>
+        </div>
+        <div class="msgContainer cursor-pointer flex justify-center items-center mt-12">
+            <p class="bg-[#081b31]  text-white p-[0.7rem] rounded-md font-bold" id="msg">Play Your Move.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
